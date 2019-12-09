@@ -9,14 +9,18 @@ canvas.height = window.innerHeight;
 context.strokeStyle = '#BADA55';
 context.lineJoin = "round";
 context.lineCap ="round";
+context.lineWidth = 50;
 
 let drawing = false;
 let lastX = 0;
 let lastY= 0;
 
+
+
 function draw(event){
     if(!drawing){return}
-    console.log(event)
+    
+    context.strokeStyle = `hsl( ${Math.random()*360}, 100% , 50% )`   
     context.beginPath();
     context.moveTo(lastX,lastY);
     context.lineTo(event.offsetX,event.offsetY);
